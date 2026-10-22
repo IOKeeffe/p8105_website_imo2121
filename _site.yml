@@ -1,0 +1,16 @@
+name: "Yet another markdown page"
+output_dir: "."
+navbar:
+  title: "Home"
+  right:
+    - text: "About"
+      href: about.html
+    - text: "Plots"
+      href: plots.html
+    - icon: fa-envelope fa-lg
+      href: mailto:<throwaway@email.net>
+    - icon: fa-github fa-lg
+      href: http://github.com/iokeeffe/
+output:
+  html_document:
+    theme: cerulean
