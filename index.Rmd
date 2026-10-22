@@ -1,0 +1,12 @@
+---
+title: "Index"
+author: "Ian O'Keeffe"
+date: "2026-10-22"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+
+```
+
+Here's my about page: [about](about.html)

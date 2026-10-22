@@ -1,0 +1,9 @@
+---
+title: "about"
+author: "Ian O'Keeffe"
+date: "2026-10-22"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+```
