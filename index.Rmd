@@ -13,9 +13,9 @@ Here's my about page: [about](about.html)
 
 These are my plots: [plot](plots.html)
 
+# cool thingz
 Here's Batman ![](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExeTJxZzRqcG40cTZnenUzaHNlejAyeDYzZnJ0ZW51em5ieDVseGhjOSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3Gij38skUDBvy/giphy.gif)
 
-Here are my dogs:
+Here are my dogs, buster (big) and piper (puny):
 <img src="images/buster_and_piper.jpeg" style="width:75%">
 
-# section 2
