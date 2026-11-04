@@ -58,7 +58,7 @@ line_plot = ggplot(mean_temps,
   labs(
     title = "New York Monthly Average Max and Min temperatures in 2010",
     x = "Month",
-    y = "Temperature (Degrees Celsius)",
+    y = "Temperature (°C)",
     color = NULL) +
   theme_minimal()
 
@@ -70,20 +70,19 @@ ggplotly(line_plot)
 
 ```{r}
 
-# nyc_airbnb |> 
-#   mutate(
-#     text_label = str_c("Price: $", price, "\nRating: ", rating) 
-#   ) |> 
-#   plot_ly(
-#     x = ~lat,
-#     y = ~long,
-#     type = "scatter",
-#     mode = "markers",
-#     color = ~price,
-#     text = ~text_label,
-#     alpha = 0.5,
-#     hoverinfo = "text"
-#   )
+scatter_data = ny_noaa |>
+  filter(!is.na(tmax), !is.na(tmin)) |>
+  slice_sample(n = 1000) |> 
+  mutate(tmax = as.numeric(tmax) / 10,
+         tmin = as.numeric(tmin) / 10)
+
+scatter_plot = ggplot(scatter_data, aes(tmin, tmax, text = paste("Date:", date))) +
+  geom_point(color = "slateblue", alpha = 0.5, na.rm = TRUE) +
+  labs(x = "Minimum temperature (°C)",
+       y = "Maximum temperature (°C)") +
+  theme_minimal()
+
+ggplotly(scatter_plot, tooltip = c("x", "y", "text"))
 ```
 
 ```{r}
