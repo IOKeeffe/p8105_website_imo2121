@@ -16,7 +16,7 @@ data(ny_noaa)
 
 ```{r}
 # ny_noaa = ny_noaa |> 
-#   slice_head(n = 5000)
+#   slice_sample(n = 5000)
 
 
 mean_temps = ny_noaa |>
@@ -72,7 +72,7 @@ ggplotly(line_plot)
 
 scatter_data = ny_noaa |>
   filter(!is.na(tmax), !is.na(tmin)) |>
-  slice_sample(n = 1000) |> 
+  slice_sample(n = 5000) |> 
   mutate(tmax = as.numeric(tmax) / 10,
          tmin = as.numeric(tmin) / 10)
 
@@ -86,40 +86,21 @@ ggplotly(scatter_plot, tooltip = c("x", "y", "text"))
 ```
 
 ```{r}
-# nyc_airbnb |> 
-#   mutate(neighbourhood = fct_reorder(neighbourhood, price)) |> 
-#   plot_ly(
-#     y = ~price,
-#     color = ~neighbourhood,
-#     type = "box",
-#     colors = "viridis"
-#   )
+snow_data = ny_noaa |>
+  mutate(date = lubridate::ymd(date),
+    month = factor(
+      lubridate::month(date),
+      levels = 1:12,
+      labels = month.abb
+    )
+  ) |>
+  filter(!is.na(snow), snow > 0) |> 
+  slice_sample(n = 5000)
+
+box_plot = ggplot(snow_data, aes(month, snow)) +
+  geom_boxplot(fill = "lightblue", na.rm = TRUE) +
+  labs(x = "Month", y = "Daily Snow Amount (mm)") +
+  theme_minimal()
+ggplotly(box_plot)
+
 ```
-
-```{r}
-# nyc_airbnb |> 
-#   count(neighbourhood) |> 
-#   mutate(neighbourhood = fct_reorder(neighbourhood, n)) |> 
-#   plot_ly(
-#     x = ~neighbourhood,
-#     y = ~n,
-#     marker = list(
-#       color = ~n,
-#       colorscale = "Viridis"
-#     ),
-#     type = "bar",
-#     colors = "viridis"
-#   )
-```
-
-```{r}
-
-# scatter = nyc_airbnb |> 
-#   ggplot(aes(x = lat, y = long, color = price)) + 
-#   geom_point(alpha = 0.5) +
-#   coord_cartesian()
-# 
-# ggplotly(scatter)
-```
-
-
