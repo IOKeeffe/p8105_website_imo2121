@@ -8,15 +8,16 @@ output:
     toc_depth: 3
     toc_float: true
 ---
-# intro
+# Intro
 My name is Ian O'Keeffe, I am a software engineer with a history in web dev (Ruby, Angular, React / Redux, etc.) who is currently earning a Master's degree in Biostatistics at Columbia University. 
 
 Here's my about page: [about](about.html)
 
 These are my plots: [plot](plots.html)
 
-# cool thingz
+# Cool Dogs
 
-Here are my dogs, buster (big) and piper (puny):
+Here are my dogs, Buster (big) and Piper (puny):
 <img src="images/buster_and_piper.jpeg" style="width:75%">
 
+They are best friends, and he is very gentle with her.

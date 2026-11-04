@@ -14,11 +14,8 @@ library(plotly)
 data(ny_noaa)
 ```
 
+## Line Graph
 ```{r}
-# ny_noaa = ny_noaa |> 
-#   slice_sample(n = 5000)
-
-
 mean_temps = ny_noaa |>
   filter(!is.na(tmax),
          !is.na(tmin),
@@ -64,8 +61,8 @@ line_plot = ggplot(mean_temps,
 
 ggplotly(line_plot)
 ```
+Monthly temperatures in 2010.
 
-# Plotly
 ## Scatterplot
 
 ```{r}
@@ -84,7 +81,9 @@ scatter_plot = ggplot(scatter_data, aes(tmin, tmax, text = paste("Date:", date))
 
 ggplotly(scatter_plot, tooltip = c("x", "y", "text"))
 ```
+## Boxplot
 
+5000 random observations, mapping minimum and maximum temperatures.
 ```{r}
 snow_data = ny_noaa |>
   mutate(date = lubridate::ymd(date),
@@ -104,3 +103,4 @@ box_plot = ggplot(snow_data, aes(month, snow)) +
 ggplotly(box_plot)
 
 ```
+5000 randomly selected observations, filtered by snowy days and how much it snowed.
