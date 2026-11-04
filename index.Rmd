@@ -11,9 +11,9 @@ output:
 # Intro
 My name is Ian O'Keeffe, I am a software engineer with a history in web dev (Ruby, Angular, React / Redux, etc.) who is currently earning a Master's degree in Biostatistics at Columbia University. 
 
-Here's my about page: [about](about.html)
+Here's my about page: [About](about.html)
 
-These are my plots: [plot](plots.html)
+These are my plots: [Plots](plotly.html)
 
 # Cool Dogs
 
