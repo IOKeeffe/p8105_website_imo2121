@@ -8,5 +8,12 @@ output:
 
 ```{r setup, include=FALSE}
 ```
+
+My name is Ian O'Keeffe. After years of working in webdev, I'm currently studying Biostatistics at Columbia's Mailman School of Public Health with a goal of helping make the world a better place.
+
+In my spare time, I sometimes run, perform improv, sit on the board of the Duke Comedy Theater, a 501(c)(3) organization based in Beacon New York. I love games, whether board or video, and love traveling to explore new cultures. 
+
+[Email me](mailto:iokeef@yahoo.com)
+[My Github](https://github.com/IOKeeffe)
 [To plots](plots.html)
 [Back to main](index.html)
