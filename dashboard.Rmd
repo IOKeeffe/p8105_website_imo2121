@@ -30,7 +30,7 @@ nyc_airbnb = nyc_airbnb |>
   )
 ```
 
-Column {data-width = 650}
+Column {data-width=350}
 -----------------------------------------------------------------------
 
 ### Scatterplot
